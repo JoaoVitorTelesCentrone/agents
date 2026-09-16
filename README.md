@@ -1,32 +1,42 @@
-# Agents
+# Agents OS
 
-AI operating system for teams and companies.
+Dark-only AI operations workspace inspired by the interaction patterns of Linear and Watermelon UI.
 
-The product combines workspaces, projects, AI agents, executions, inbox alerts and a knowledge base in a single interface.
+## Product surfaces
 
-## Product direction
-
-- Multi-workspace / multi-organization
-- AI agents with configurable tools
-- Agent execution history
-- Inbox for alerts, findings and approvals
-- Projects and tasks
+- Overview
+- Inbox / approval queue
+- Agents directory
+- Agent creation
+- Agent detail + chat
+- Runs / execution history
+- Projects
 - Knowledge base
-- Team members and permissions
-- Usage and billing
+- Members
+- Settings / providers / integrations / billing
 
 ## Stack
 
-- Next.js
+- Next.js 15
 - TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Supabase (planned)
-- AI providers via server-side adapters (planned)
+- React 19
+- Lucide icons
+- Watermelon UI-inspired dark interface
 
-## UI inspiration
+## Branch strategy
 
-The initial product UI is inspired by the open-source Circle project by ln-dev7, which is MIT licensed:
-https://github.com/ln-dev7/circle
+- `main`: stable integration branch
+- `feat/initial-mvp`: complete UI foundation
+- `feat/backend`: backend implementation branched from the UI foundation
 
-This repository will evolve into a distinct AI-agent product rather than a project-management clone.
+## Backend plan
+
+The backend branch will wire Supabase Auth/Postgres/Storage, multi-workspace access, persisted agents, runs, chat, knowledge ingestion, provider adapters, inbox approvals, usage and billing. Secrets will be provided through environment variables and never committed.
+
+## Environment contract (backend phase)
+
+A `.env.example` will document every external switch required to run the product. The goal is that deployment requires configuration, not source-code edits.
+
+## Third-party notices
+
+See `THIRD_PARTY_NOTICES.md` for Watermelon UI attribution.
